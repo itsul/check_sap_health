@@ -63,6 +63,10 @@ sub init {
         push(@shortdumps, $shortdump);
       }
       if (scalar(@shortdumps) == 0) {
+        $self->add_perfdata(
+              label => 'shortdumps',
+              value => 0
+        );
         $self->add_ok(sprintf "no new shortdumps between %s %s and %s %s",
             $fromdate, $fromtime, $todate, $totime);
       } else {
